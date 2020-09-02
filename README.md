@@ -8,15 +8,15 @@ You should already have MySQL installed from last week but if you don't, please 
 
 ##### Disable Binary Logging (Google Cloud)
 
-We need to alter a setting in our cloud database in order to import the dataset that we need. This setting has to do with "triggers" which we have not learned about directly but that you will look for more practice with later. 
+We need to alter a setting in our cloud database in order to import the dataset that we need. This setting has to do with "triggers" which we have not learned about directly but that you will look for more practice with later.
 
-1. Navigate to cloud.google.com and make sure you are logged in. 
+1. Navigate to cloud.google.com and make sure you are logged in.
 
 2. Navigate to your SQL instance (Cloud SQL)
 
 3. Under the "configuration" tab on the right side of your screen, select "edit configuration"
 
-4. Under "Enable auto backups" DESELECT "enable binary logging"
+4. Under "Enable auto backups" DESELECT "enable binary logging" (Enable point and time recovery)
 
 5. Save and restart the instance
 
@@ -66,13 +66,16 @@ We are going to use a sample schema given to use by MySQL.
 
 8. Answer the following questions about this diagram
 
-##### ER Diagram Diagnosis 
+##### ER Diagram Diagnosis
 
 1. What is the relationship between the "actor" and "film_actor" tables?
+One to Many
 
 2. What does the blue diamond next to the "last_update" column on the "inventory" table represent?
+TimeStamp - Not Null
 
 3. How many foreign keys does the "payments" table have? How can you tell?
+3 - payment_customer, payment_rental, payment_staff
 
 ##### ER Diagram upload
 
